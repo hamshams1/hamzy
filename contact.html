@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Sterling Meridian Securities</title>
+<meta name="description" content="Contact Sterling Meridian by phone, email, live chat or at our New York office. Speak with a licensed broker about your investment needs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 42'%3E%3Crect width='42' height='42' rx='10' fill='%230B2242'/%3E%3Ccircle cx='21' cy='21' r='11' stroke='%23C6A15B' stroke-width='2' fill='none'/%3E%3Cpath d='M10 21h22' stroke='%23C6A15B' stroke-width='1.5'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Sterling Meridian home">
+      <svg class="brand-mark" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+        <rect width="42" height="42" rx="12" fill="#0B2242"/>
+        <circle cx="21" cy="21" r="11.5" stroke="#C6A15B" stroke-width="1.6"/>
+        <ellipse cx="21" cy="21" rx="5" ry="11.5" stroke="#C6A15B" stroke-width="1.1"/>
+        <path d="M9.5 21h23" stroke="#C6A15B" stroke-width="1.1"/>
+      </svg>
+      <span class="brand-text"><span class="brand-name">Sterling Meridian</span><span class="brand-tag">Securities</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="markets.html">Markets</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-login" data-login-open type="button">Login</button>
+      <a class="btn btn-gold btn-sm" href="open-account.html">Open an Account</a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-actions">
+      <button class="btn btn-outline btn-sm" data-login-open type="button">Login</button>
+      <a class="btn btn-gold btn-sm" href="open-account.html">Open an Account</a>
+      <a class="btn btn-navy btn-sm" href="contact.html">Contact a Broker</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero" style="padding:64px 0 56px">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> nbsp;/nbsp; Contact</nav>
+      <h1>Talk to a real broker</h1>
+      <p>No phone trees, no chatbots passing you around. Reach a licensed professional during market hours — average call answer time is under 30 seconds.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:56px">
+    <div class="container">
+      <div class="dash-grid">
+        <!-- Contact form -->
+        <div class="panel" style="padding:40px">
+          <h2 style="font-size:1.5rem;margin-bottom:6px">Send us a message</h2>
+          <p style="color:var(--slate);font-size:14.5px;margin-bottom:28px">We respond to every inquiry within one business day.</p>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="c-name">Full name *</label>
+                <input class="input" id="c-name" name="name" type="text" autocomplete="name" required>
+                <p class="field-error">Please enter your name.</p>
+              </div>
+              <div class="field">
+                <label for="c-email">Email *</label>
+                <input class="input" id="c-email" name="email" type="email" autocomplete="email" required>
+                <p class="field-error">Please enter a valid email.</p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="c-phone">Phone</label>
+                <input class="input" id="c-phone" name="phone" type="tel" autocomplete="tel">
+              </div>
+              <div class="field">
+                <label for="c-topic">Topic *</label>
+                <select class="select" id="c-topic" name="topic" required>
+                  <option value="">Select a topic…</option>
+                  <option>Open a new account</option>
+                  <option>Existing account question</option>
+                  <option>Portfolio management</option>
+                  <option>Corporate / treasury services</option>
+                  <option>Trading platform support</option>
+                  <option>Complaint or compliance matter</option>
+                  <option>Other</option>
+                </select>
+                <p class="field-error">Please select a topic.</p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="c-msg">Message *</label>
+              <textarea class="textarea" id="c-msg" name="message" required placeholder="How can we help?"></textarea>
+              <p class="field-error">Please enter a message.</p>
+            </div>
+            <div class="checkbox-row">
+              <input type="checkbox" id="c-consent" required>
+              <label for="c-consent">I consent to Sterling Meridian contacting me about this inquiry, per the <a href="legal.html#privacy">Privacy Policy</a>. *</label>
+            </div>
+            <button class="btn btn-gold btn-lg btn-block" type="submit">Send Message</button>
+            <p id="contact-success" style="display:none;margin-top:16px;font-size:14px;color:var(--success);font-weight:700;text-align:center"></p>
+            <p class="risk-note" style="margin-top:14px;text-align:center">Demonstration form — no message is transmitted from this concept site. Please do not include account numbers or sensitive data.</p>
+          </form>
+        </div>
+
+        <!-- Contact details -->
+        <div style="display:grid;gap:20px;align-content:start">
+          <div class="contact-card">
+            <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg></div>
+            <div>
+              <h3>Phone</h3>
+              <p><a href="tel:+12125550180">+1 (212) 555-0180</a> — main line amp; trading desk<br>
+              <a href="tel:+12125550199">+1 (212) 555-0199</a> — corporate clients</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></div>
+            <div>
+              <h3>Email</h3>
+              <p><a href="mailto:clients@sterlingmeridian.com">clients@sterlingmeridian.com</a> — client services<br>
+              <a href="mailto:corporate@sterlingmeridian.com">corporate@sterlingmeridian.com</a> — corporate desk</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <h3>Office</h3>
+              <p>One Meridian Plaza, 40th Floor<br>New York, NY 10005, United States</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+            <div>
+              <h3>Business Hours</h3>
+              <p>Monday – Friday: 8:00 AM – 7:00 PM ET<br>Saturday: 9:00 AM – 1:00 PM ET (support only)<br>Sunday &amp; market holidays: closed</p>
+            </div>
+          </div>
+          <div class="contact-card" style="background:linear-gradient(150deg, var(--navy-900), var(--navy-700));border-color:var(--navy-700)">
+            <div class="icon-badge" style="background:rgba(198,161,91,0.18)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DCBF85" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 01-9 8.4 8.6 8.6 0 01-3.8-.9L3 21l2-4.8a8.4 8.4 0 1116-4.7z"/></svg></div>
+            <div>
+              <h3 style="color:#fff">Live Chat</h3>
+              <p style="color:var(--navy-100);opacity:0.85">Chat with a licensed representative in real time during business hours.</p>
+              <button class="btn btn-gold btn-sm" type="button" id="live-chat-btn" style="margin-top:14px">Start Live Chat</button>
+              <p id="chat-note" style="display:none;color:var(--gold-light);font-size:12.5px;margin-top:10px">Live chat is not available on this demonstration site. Please call +1 (212) 555-0180.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-panel reveal" style="margin-top:56px" aria-label="Stylized map of the office location">
+        <svg viewBox="0 0 1200 320" role="img" aria-label="Stylized street map showing One Meridian Plaza in lower Manhattan">
+          <rect width="1200" height="320" fill="#EFF4FA"/>
+          <g stroke="#DCE6F2" stroke-width="14">
+            <line x1="0" y1="60" x2="1200" y2="60"/><line x1="0" y1="150" x2="1200" y2="150"/><line x1="0" y1="240" x2="1200" y2="240"/>
+            <line x1="180" y1="0" x2="180" y2="320"/><line x1="420" y1="0" x2="420" y2="320"/><line x1="660" y1="0" x2="660" y2="320"/><line x1="900" y1="0" x2="900" y2="320"/>
+          </g>
+          <g stroke="#C9D6E6" stroke-width="3">
+            <line x1="0" y1="105" x2="1200" y2="105"/><line x1="0" y1="195" x2="1200" y2="195"/><line x1="0" y1="285" x2="1200" y2="285"/>
+            <line x1="300" y1="0" x2="300" y2="320"/><line x1="540" y1="0" x2="540" y2="320"/><line x1="780" y1="0" x2="780" y2="320"/><line x1="1020" y1="0" x2="1020" y2="320"/>
+          </g>
+          <rect x="0" y="290" width="1200" height="30" fill="#DCE6F2" opacity="0.7"/>
+          <circle cx="660" cy="150" r="34" fill="rgba(198,161,91,0.25)"/>
+          <circle cx="660" cy="150" r="12" fill="#0B2242" stroke="#C6A15B" stroke-width="3"/>
+          <g transform="translate(686,124)">
+            <rect x="0" y="0" width="255" height="52" rx="10" fill="#0B2242"/>
+            <text x="16" y="22" fill="#FFFFFF" font-family="Manrope, sans-serif" font-size="13" font-weight="800">Sterling Meridian Securities</text>
+            <text x="16" y="40" fill="#DCBF85" font-family="Manrope, sans-serif" font-size="11.5">One Meridian Plaza, 40th Floor · New York</text>
+          </g>
+        </svg>
+      </div>
+
+      <div style="text-align:center;margin-top:44px" class="reveal">
+        <a class="btn btn-gold btn-lg" href="open-account.html">Open an Account</a>
+        <button class="btn btn-outline btn-lg" style="margin-left:12px" data-login-open type="button">Client Login</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Sterling Meridian home">
+          <svg class="brand-mark" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+            <rect width="42" height="42" rx="12" fill="#12305C"/>
+            <circle cx="21" cy="21" r="11.5" stroke="#C6A15B" stroke-width="1.6"/>
+            <ellipse cx="21" cy="21" rx="5" ry="11.5" stroke="#C6A15B" stroke-width="1.1"/>
+            <path d="M9.5 21h23" stroke="#C6A15B" stroke-width="1.1"/>
+          </svg>
+          <span class="brand-text"><span class="brand-name">Sterling Meridian</span><span class="brand-tag">Securities</span></span>
+        </a>
+        <p class="footer-about">A full-service brokerage firm serving individuals and businesses since 1998. Member FINRA/SIPC.</p>
+      </div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#leadership">Leadership</a></li>
+        <li><a href="about.html#compliance">Regulatory Info</a></li>
+        <li><a href="contact.html">Careers amp; Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="services.html#investment-brokerage">Investment Brokerage</a></li>
+        <li><a href="services.html#portfolio-management">Portfolio Management</a></li>
+        <li><a href="services.html#investment-advisory">Investment Advisory</a></li>
+        <li><a href="services.html#corporate-brokerage">Corporate Brokerage</a></li>
+        <li><a href="services.html#research">Research amp; Analysis</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Investors</h4><ul>
+        <li><a href="markets.html">Markets amp; Trading</a></li>
+        <li><a href="open-account.html">Open an Account</a></li>
+        <li><a href="dashboard.html">Client Dashboard</a></li>
+        <li><a href="legal.html#risk">Risk Disclosure</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>+1 (212) 555-0180</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>clients@sterlingmeridian.com</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>One Meridian Plaza, 40th Floor<br>New York, NY 10005</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal-links">
+        <a href="legal.html#privacy">Privacy Policy</a>
+        <a href="legal.html#terms">Terms of Service</a>
+        <a href="legal.html#risk">Risk Disclosure</a>
+        <a href="legal.html#regulatory">Regulatory Information</a>
+        <a href="legal.html#cookies">Cookie Policy</a>
+        <a href="#" data-login-open>Client Login</a>
+      </div>
+      <p class="footer-disclaimer">Securities and advisory services offered through Sterling Meridian Securities LLC, a registered broker-dealer and investment adviser. Member FINRA/SIPC. Investing involves risk, including the possible loss of principal. No investment strategy or risk management technique can guarantee returns or eliminate risk in any market environment. Past performance is not indicative of future results. Nothing on this website constitutes an offer, solicitation, recommendation or endorsement to buy or sell any security. Market data shown on this site may be delayed and is provided for informational purposes only. SIPC protects against the loss of cash and securities held by a custodian, but does not protect against market losses.</p>
+      <p class="footer-copy"> copy; <span data-year></span> Sterling Meridian Securities LLC. All rights reserved. One Meridian Plaza, New York, NY 10005.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="login-title">
+  <div class="modal">
+    <button class="modal-close" type="button" aria-label="Close login dialog">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <h2 id="login-title">Client Login</h2>
+    <p class="modal-sub">Access your Sterling Meridian dashboard securely.</p>
+    <form novalidate>
+      <div class="field"><label for="login-email">Email address</label><input class="input" id="login-email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="login-pass">Password</label><input class="input" id="login-pass" type="password" autocomplete="current-password" required></div>
+      <div class="checkbox-row"><input type="checkbox" id="remember"><label for="remember">Keep me signed in on this device</label></div>
+      <button class="btn btn-navy btn-block" type="submit">Sign In Securely</button>
+      <p class="login-msg" style="display:none;font-size:13px;color:var(--danger);margin-top:14px;text-align:center"></p>
+    </form>
+    <p class="secure-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+      256-bit encryption · Two-factor authentication
+    </p>
+    <p style="font-size:13px;text-align:center;margin-top:16px;color:var(--slate)">New to Sterling Meridian? <a href="open-account.html" style="color:var(--navy-700);font-weight:700">Open an account</a></p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+(function () {
+  var form = document.getElementById("contact-form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var valid = true;
+    form.querySelectorAll(".field").forEach(function (field) {
+      var input = field.querySelector("input, select, textarea");
+      if (!input || !input.hasAttribute("required")) return;
+      var ok = input.value.trim() !== "";
+      if (ok && input.type === "email") ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
+      field.classList.toggle("invalid", !ok);
+      input.classList.toggle("error", !ok);
+      if (!ok) valid = false;
+    });
+    var consent = document.getElementById("c-consent");
+    if (!consent.checked) { valid = false; consent.closest(".checkbox-row").style.color = "var(--danger)"; }
+    else consent.closest(".checkbox-row").style.color = "";
+    var msg = document.getElementById("contact-success");
+    if (valid) {
+      msg.textContent = "Thank you — on a live site, our team would respond within one business day.";
+      msg.style.display = "block";
+      form.reset();
+    }
+  });
+  var chat = document.getElementById("live-chat-btn");
+  chat.addEventListener("click", function () {
+    document.getElementById("chat-note").style.display = "block";
+  });
+})();
+</script>
+</body>
+</html>

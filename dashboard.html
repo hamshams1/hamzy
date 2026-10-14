@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Dashboard — Sterling Meridian Securities</title>
+<meta name="description" content="The Sterling Meridian client dashboard: portfolio value, holdings, watchlist, transactions, performance charts, notifications and security settings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 42'%3E%3Crect width='42' height='42' rx='10' fill='%230B2242'/%3E%3Ccircle cx='21' cy='21' r='11' stroke='%23C6A15B' stroke-width='2' fill='none'/%3E%3Cpath d='M10 21h22' stroke='%23C6A15B' stroke-width='1.5'/%3E%3C/svg%3E">
+</head>
+<body style="background:var(--bg-soft)">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Sterling Meridian home">
+      <svg class="brand-mark" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+        <rect width="42" height="42" rx="12" fill="#0B2242"/>
+        <circle cx="21" cy="21" r="11.5" stroke="#C6A15B" stroke-width="1.6"/>
+        <ellipse cx="21" cy="21" rx="5" ry="11.5" stroke="#C6A15B" stroke-width="1.1"/>
+        <path d="M9.5 21h23" stroke="#C6A15B" stroke-width="1.1"/>
+      </svg>
+      <span class="brand-text"><span class="brand-name">Sterling Meridian</span><span class="brand-tag">Securities</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="markets.html">Markets</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-login" data-login-open type="button">Login</button>
+      <a class="btn btn-gold btn-sm" href="open-account.html">Open an Account</a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-actions">
+      <button class="btn btn-outline btn-sm" data-login-open type="button">Login</button>
+      <a class="btn btn-gold btn-sm" href="open-account.html">Open an Account</a>
+      <a class="btn btn-navy btn-sm" href="contact.html">Contact a Broker</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container" style="padding-top:34px;padding-bottom:80px">
+
+    <div class="demo-banner">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <span>Demonstration dashboard — all figures, holdings and activity below are fictional sample data, shown to illustrate the client experience. No real account is connected.</span>
+    </div>
+
+    <div class="dash-layout">
+      <!-- Sidebar -->
+      <aside class="dash-side" aria-label="Dashboard navigation">
+        <div class="dash-user">
+          <div class="t-avatar" aria-hidden="true">MR</div>
+          <div>
+            <div class="du-name">Margaret Reynolds</div>
+            <div class="du-tier">Gold Tier Client</div>
+          </div>
+        </div>
+        <ul class="dash-nav">
+          <li><a href="#overview" class="active"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Overview</a></li>
+          <li><a href="#holdings"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 3 5-6"/></svg>Holdings</a></li>
+          <li><a href="#watchlist"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6.5 7 1-5 5 1.2 7L12 18.3 5.8 21.5 7 14.5l-5-5 7-1z"/></svg>Watchlist</a></li>
+          <li><a href="#transactions"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>Transactions</a></li>
+          <li><a href="#markets"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>Markets</a></li>
+          <li><a href="#notifications"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/></svg>Notifications</a></li>
+          <li><a href="#settings"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>Profile &amp; Security</a></li>
+        </ul>
+        <div style="border-top:1px solid var(--line-soft);margin-top:14px;padding-top:16px">
+          <a class="btn btn-gold btn-sm btn-block" href="contact.html">Contact My Broker</a>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <div>
+        <div id="overview" style="scroll-margin-top:100px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:22px">
+            <div>
+              <h1 style="font-size:1.7rem">Good morning, Margaret</h1>
+              <p style="color:var(--slate-light);font-size:14px;margin-top:4px">Portfolio overview · Last updated Oct 4, 9:31 AM ET (delayed sample data)</p>
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn btn-navy btn-sm" type="button">Deposit Funds</button>
+              <button class="btn btn-outline btn-sm" type="button">New Trade</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi featured">
+              <div class="kpi-label">Total Portfolio Value</div>
+              <div class="kpi-value">$1,243,908.52</div>
+              <div class="kpi-sub"><span class="pos" style="color:#4ADE9B">▲ +$8,412.36 (+0.68%)</span> today</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-label">Account Balance (Cash)</div>
+              <div class="kpi-value">$86,240.19</div>
+              <div class="kpi-sub" style="color:var(--slate-light)">Across USD amp; EUR wallets</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-label">Day's Gain / Loss</div>
+              <div class="kpi-value pos">+$8,412.36</div>
+              <div class="kpi-sub pos">+0.68% vs prior close</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-label">Buying Power</div>
+              <div class="kpi-value">$172,480.38</div>
+              <div class="kpi-sub" style="color:var(--slate-light)">Includes 2× margin (demo)</div>
+            </div>
+          </div>
+
+          <div class="dash-grid">
+            <div class="panel" style="padding:26px">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px">
+                <h3 style="font-size:1.05rem">Portfolio Performance</h3>
+                <div class="chart-tabs" role="tablist" aria-label="Performance range">
+                  <button class="perf-tab chart-tab" data-range="1M" type="button">1M</button>
+                  <button class="perf-tab chart-tab" data-range="3M" type="button">3M</button>
+                  <button class="perf-tab chart-tab active" data-range="6M" type="button">6M</button>
+                  <button class="perf-tab chart-tab" data-range="YTD" type="button">YTD</button>
+                  <button class="perf-tab chart-tab" data-range="1Y" type="button">1Y</button>
+                </div>
+              </div>
+              <div class="big-chart" id="perf-chart"></div>
+              <div style="display:flex;gap:26px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid var(--line-soft)">
+                <div><div style="font-size:12px;color:var(--slate-light);font-weight:700;text-transform:uppercase;letter-spacing:0.07em">6M Return</div><div class="pos" style="font-weight:800;font-size:15px;margin-top:3px">+9.42%</div></div>
+                <div><div style="font-size:12px;color:var(--slate-light);font-weight:700;text-transform:uppercase;letter-spacing:0.07em">Benchmark (S&amp;P 500)</div><div style="font-weight:800;font-size:15px;margin-top:3px;color:var(--slate)">+8.17%</div></div>
+                <div><div style="font-size:12px;color:var(--slate-light);font-weight:700;text-transform:uppercase;letter-spacing:0.07em">Dividends (YTD)</div><div style="font-weight:800;font-size:15px;margin-top:3px;color:var(--navy-900)">$14,208.77</div></div>
+              </div>
+              <p class="risk-note" style="margin-top:12px">Performance shown is fictional demonstration data. Past performance does not guarantee future results; benchmark comparison does not imply outperformance will continue.</p>
+            </div>
+
+            <div class="panel" style="padding:26px">
+              <h3 style="font-size:1.05rem;margin-bottom:18px">Asset Allocation</h3>
+              <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap">
+                <div id="allocation-donut"></div>
+                <div id="allocation-legend" style="flex:1;min-width:170px"></div>
+              </div>
+              <div class="notice notice-navy" style="margin-top:18px;font-size:12.5px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                <span>Allocation reflects your target policy of 60/40 growth/income. Next scheduled rebalance review: Q4.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Holdings -->
+        <h2 class="dash-section-title" id="holdings" style="scroll-margin-top:100px">Holdings</h2>
+        <div class="table-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Avg. Cost</th>
+                <th scope="col">Last Price</th>
+                <th scope="col">Market Value</th>
+                <th scope="col">Unrealized G/L</th>
+                <th scope="col">Weight</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>VOO</strong><div style="font-size:12.5px;color:var(--slate-light)">Vanguard Samp;P 500 ETF</div></td><td class="num">620</td><td class="num">$431.20</td><td class="num">$521.73</td><td class="num">$323,472.60</td><td class="num pos">+$56,128.60 (+21.0%)</td><td class="num">26.0%</td></tr>
+              <tr><td><strong>MSFT</strong><div style="font-size:12.5px;color:var(--slate-light)">Microsoft Corp.</div></td><td class="num">310</td><td class="num">$356.80</td><td class="num">$418.30</td><td class="num">$129,673.00</td><td class="num pos">+$19,065.00 (+17.2%)</td><td class="num">10.4%</td></tr>
+              <tr><td><strong>AAPL</strong><div style="font-size:12.5px;color:var(--slate-light)">Apple Inc.</div></td><td class="num">450</td><td class="num">$187.44</td><td class="num">$227.52</td><td class="num">$102,384.00</td><td class="num pos">+$18,036.00 (+21.4%)</td><td class="num">8.2%</td></tr>
+              <tr><td><strong>AGG</strong><div style="font-size:12.5px;color:var(--slate-light)">iShares Core US Agg Bond</div></td><td class="num">1,850</td><td class="num">$98.10</td><td class="num">$99.84</td><td class="num">$184,704.00</td><td class="num pos">+$3,219.00 (+1.8%)</td><td class="num">14.8%</td></tr>
+              <tr><td><strong>JPM</strong><div style="font-size:12.5px;color:var(--slate-light)">JPMorgan Chase amp; Co.</div></td><td class="num">380</td><td class="num">$192.55</td><td class="num">$214.09</td><td class="num">$81,354.20</td><td class="num pos">+$8,185.20 (+11.2%)</td><td class="num">6.5%</td></tr>
+              <tr><td><strong>NVDA</strong><div style="font-size:12.5px;color:var(--slate-light)">NVIDIA Corp.</div></td><td class="num">520</td><td class="num">$104.22</td><td class="num">$121.88</td><td class="num">$63,377.60</td><td class="num pos">+$9,183.20 (+16.9%)</td><td class="num">5.1%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="risk-note" style="margin-top:10px">Positions and prices are fictional demonstration data and may be delayed in a live environment.</p>
+
+        <!-- Watchlist + markets + notifications -->
+        <h2 class="dash-section-title" id="watchlist" style="scroll-margin-top:100px">Watchlist amp; Markets</h2>
+        <div class="dash-grid" id="markets">
+          <div style="display:grid;gap:24px">
+            <div class="panel watchlist-panel">
+              <div class="panel-head">
+                <h3>My Watchlist</h3>
+                <a class="text-link" style="font-size:13px;border:none" href="markets.html">Open Markets <span class="arrow" aria-hidden="true">→</span></a>
+              </div>
+              <div id="dash-watchlist"></div>
+              <div style="padding:14px 24px;border-top:1px solid var(--line-soft);font-size:12.5px;color:var(--slate-light)">Synced with the Markets page watchlist on this device (demo).</div>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><h3>Market Overview</h3><span class="chip chip-gold">Delayed</span></div>
+              <div class="panel-body" style="padding:8px 24px 18px">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px">
+                  <div style="border:1px solid var(--line-soft);border-radius:12px;padding:16px"><div style="font-size:12.5px;font-weight:800;color:var(--slate-light)">S&amp;P 500</div><div class="num" style="font-weight:800;color:var(--navy-900);margin-top:4px">5,699.94</div><div class="num pos" style="font-size:12.5px;font-weight:700">+0.58%</div></div>
+                  <div style="border:1px solid var(--line-soft);border-radius:12px;padding:16px"><div style="font-size:12.5px;font-weight:800;color:var(--slate-light)">Nasdaq 100</div><div class="num" style="font-weight:800;color:var(--navy-900);margin-top:4px">19,938.05</div><div class="num pos" style="font-size:12.5px;font-weight:700">+0.97%</div></div>
+                  <div style="border:1px solid var(--line-soft);border-radius:12px;padding:16px"><div style="font-size:12.5px;font-weight:800;color:var(--slate-light)">EUR/USD</div><div class="num" style="font-weight:800;color:var(--navy-900);margin-top:4px">1.1042</div><div class="num pos" style="font-size:12.5px;font-weight:700">+0.15%</div></div>
+                  <div style="border:1px solid var(--line-soft);border-radius:12px;padding:16px"><div style="font-size:12.5px;font-weight:800;color:var(--slate-light)">Gold Spot</div><div class="num" style="font-weight:800;color:var(--navy-900);margin-top:4px">2,658.40</div><div class="num pos" style="font-size:12.5px;font-weight:700">+0.33%</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;gap:24px">
+            <div class="panel" id="notifications" style="scroll-margin-top:100px">
+              <div class="panel-head"><h3>Notifications</h3><span class="chip chip-navy">3 new</span></div>
+              <ul class="notif-list">
+                <li class="notif"><span class="notif-dot gold" aria-hidden="true"></span><div><p><strong>Dividend received</strong> — VOO paid $1,204.66 to your cash wallet.</p><div class="n-time">Today, 8:05 AM ET</div></div></li>
+                <li class="notif"><span class="notif-dot green" aria-hidden="true"></span><div><p><strong>Order filled</strong> — Bought 50 JPM @ $213.88 (limit order).</p><div class="n-time">Yesterday, 2:41 PM ET</div></div></li>
+                <li class="notif"><span class="notif-dot navy" aria-hidden="true"></span><div><p><strong>Research note</strong> — "Earnings quality: reading beyond the headline beat" is now available.</p><div class="n-time">Yesterday, 7:30 AM ET</div></div></li>
+                <li class="notif"><span class="notif-dot navy" aria-hidden="true"></span><div><p><strong>Statement ready</strong> — Your September monthly statement is available for download.</p><div class="n-time">Oct 1, 6:00 AM ET</div></div></li>
+                <li class="notif"><span class="notif-dot gold" aria-hidden="true"></span><div><p><strong>Advisor message</strong> — Your Q4 rebalancing review is scheduled with Marcus Okafor.</p><div class="n-time">Sep 28, 11:12 AM ET</div></div></li>
+              </ul>
+            </div>
+
+            <!-- Transactions -->
+            <div class="panel" id="transactions" style="scroll-margin-top:100px">
+              <div class="panel-head"><h3>Recent Transactions</h3><a class="text-link" style="font-size:13px;border:none" href="#">View all <span class="arrow" aria-hidden="true">→</span></a></div>
+              <div class="table-wrap" style="border:none;box-shadow:none;border-radius:0">
+                <table class="data" style="min-width:520px">
+                  <thead><tr><th scope="col">Date</th><th scope="col">Description</th><th scope="col">Type</th><th scope="col">Amount</th></tr></thead>
+                  <tbody>
+                    <tr><td class="num">Oct 3</td><td>Buy 50 JPM @ $213.88</td><td><span class="chip chip-green">Buy</span></td><td class="num">−$10,694.00</td></tr>
+                    <tr><td class="num">Oct 3</td><td>VOO dividend distribution</td><td><span class="chip chip-navy">Dividend</span></td><td class="num pos">+$1,204.66</td></tr>
+                    <tr><td class="num">Oct 1</td><td>Sell 30 NVDA @ $123.05</td><td><span class="chip chip-red">Sell</span></td><td class="num pos">+$3,691.50</td></tr>
+                    <tr><td class="num">Sep 27</td><td>ACH deposit from ••4821</td><td><span class="chip chip-navy">Deposit</span></td><td class="num pos">+$25,000.00</td></tr>
+                    <tr><td class="num">Sep 25</td><td>Advisory fee — Q3 (0.19% annualized)</td><td><span class="chip chip-gold">Fee</span></td><td class="num">−$582.40</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings -->
+        <h2 class="dash-section-title" id="settings" style="scroll-margin-top:100px">Profile amp; Security</h2>
+        <div class="dash-grid">
+          <div class="panel">
+            <div class="panel-head"><h3>Security Settings</h3><span class="chip chip-green">Account secure</span></div>
+            <div class="panel-body" style="padding-top:8px">
+              <div class="setting-row">
+                <div><h4>Two-factor authentication</h4><p>Required for sign-in and withdrawals (authenticator app).</p></div>
+                <span class="toggle"><input type="checkbox" checked aria-label="Two-factor authentication"><span class="track"></span></span>
+              </div>
+              <div class="setting-row">
+                <div><h4>Withdrawal allow-list</h4><p>Only pre-approved bank accounts can receive funds.</p></div>
+                <span class="toggle"><input type="checkbox" checked aria-label="Withdrawal allow-list"><span class="track"></span></span>
+              </div>
+              <div class="setting-row">
+                <div><h4>Sign-in alerts</h4><p>Email and SMS on every new device or location.</p></div>
+                <span class="toggle"><input type="checkbox" checked aria-label="Sign-in alerts"><span class="track"></span></span>
+              </div>
+              <div class="setting-row">
+                <div><h4>Biometric mobile unlock</h4><p>Face or fingerprint unlock on the mobile app.</p></div>
+                <span class="toggle"><input type="checkbox" aria-label="Biometric mobile unlock"><span class="track"></span></span>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Profile</h3><button class="btn btn-outline btn-sm" type="button">Edit</button></div>
+            <div class="panel-body" style="padding-top:8px">
+              <div class="setting-row"><div><h4>Email</h4><p>m.reynolds@example.com (verified)</p></div><span class="chip chip-green">Verified</span></div>
+              <div class="setting-row"><div><h4>Phone</h4><p>+1 (212) 555-0147 (verified)</p></div><span class="chip chip-green">Verified</span></div>
+              <div class="setting-row"><div><h4>Account tier</h4><p>Gold — dedicated relationship manager</p></div><span class="chip chip-gold">Gold</span></div>
+              <div class="setting-row"><div><h4>Risk profile</h4><p>Moderate growth · reviewed Sep 2026</p></div><span class="chip chip-navy">Moderate</span></div>
+              <div class="setting-row"><div><h4>Documents</h4><p>Statements, tax forms and agreements</p></div><button class="btn btn-outline btn-sm" type="button">Download Center</button></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="risk-note" style="margin-top:30px">This dashboard is a design concept populated with fictional data. Market values may be delayed. Nothing here constitutes financial advice. Investing involves risk, including possible loss of principal.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Sterling Meridian home">
+          <svg class="brand-mark" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+            <rect width="42" height="42" rx="12" fill="#12305C"/>
+            <circle cx="21" cy="21" r="11.5" stroke="#C6A15B" stroke-width="1.6"/>
+            <ellipse cx="21" cy="21" rx="5" ry="11.5" stroke="#C6A15B" stroke-width="1.1"/>
+            <path d="M9.5 21h23" stroke="#C6A15B" stroke-width="1.1"/>
+          </svg>
+          <span class="brand-text"><span class="brand-name">Sterling Meridian</span><span class="brand-tag">Securities</span></span>
+        </a>
+        <p class="footer-about">A full-service brokerage firm serving individuals and businesses since 1998. Member FINRA/SIPC.</p>
+      </div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#leadership">Leadership</a></li>
+        <li><a href="about.html#compliance">Regulatory Info</a></li>
+        <li><a href="contact.html">Careers amp; Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="services.html#investment-brokerage">Investment Brokerage</a></li>
+        <li><a href="services.html#portfolio-management">Portfolio Management</a></li>
+        <li><a href="services.html#investment-advisory">Investment Advisory</a></li>
+        <li><a href="services.html#corporate-brokerage">Corporate Brokerage</a></li>
+        <li><a href="services.html#research">Research amp; Analysis</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Investors</h4><ul>
+        <li><a href="markets.html">Markets amp; Trading</a></li>
+        <li><a href="open-account.html">Open an Account</a></li>
+        <li><a href="dashboard.html">Client Dashboard</a></li>
+        <li><a href="legal.html#risk">Risk Disclosure</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>+1 (212) 555-0180</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>clients@sterlingmeridian.com</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>One Meridian Plaza, 40th Floor<br>New York, NY 10005</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal-links">
+        <a href="legal.html#privacy">Privacy Policy</a>
+        <a href="legal.html#terms">Terms of Service</a>
+        <a href="legal.html#risk">Risk Disclosure</a>
+        <a href="legal.html#regulatory">Regulatory Information</a>
+        <a href="legal.html#cookies">Cookie Policy</a>
+        <a href="#" data-login-open>Client Login</a>
+      </div>
+      <p class="footer-disclaimer">Securities and advisory services offered through Sterling Meridian Securities LLC, a registered broker-dealer and investment adviser. Member FINRA/SIPC. Investing involves risk, including the possible loss of principal. No investment strategy or risk management technique can guarantee returns or eliminate risk in any market environment. Past performance is not indicative of future results. Nothing on this website constitutes an offer, solicitation, recommendation or endorsement to buy or sell any security. Market data shown on this site may be delayed and is provided for informational purposes only. SIPC protects against the loss of cash and securities held by a custodian, but does not protect against market losses.</p>
+      <p class="footer-copy">copy; <span data-year></span> Sterling Meridian Securities LLC. All rights reserved. One Meridian Plaza, New York, NY 10005.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="login-title">
+  <div class="modal">
+    <button class="modal-close" type="button" aria-label="Close login dialog">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <h2 id="login-title">Client Login</h2>
+    <p class="modal-sub">Access your Sterling Meridian dashboard securely.</p>
+    <form novalidate>
+      <div class="field"><label for="login-email">Email address</label><input class="input" id="login-email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="login-pass">Password</label><input class="input" id="login-pass" type="password" autocomplete="current-password" required></div>
+      <div class="checkbox-row"><input type="checkbox" id="remember"><label for="remember">Keep me signed in on this device</label></div>
+      <button class="btn btn-navy btn-block" type="submit">Sign In Securely</button>
+      <p class="login-msg" style="display:none;font-size:13px;color:var(--danger);margin-top:14px;text-align:center"></p>
+    </form>
+    <p class="secure-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+      256-bit encryption · Two-factor authentication
+    </p>
+    <p style="font-size:13px;text-align:center;margin-top:16px;color:var(--slate)">New to Sterling Meridian? <a href="open-account.html" style="color:var(--navy-700);font-weight:700">Open an account</a></p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
